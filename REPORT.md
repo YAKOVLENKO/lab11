@@ -43,6 +43,7 @@ $ git config --global hub.protocol https # Просмотр и установк�
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/archive/v0.1.0.0.tar.gz # получаем архив
 $ export PRINT_SHA1=`openssl sha1 v0.1.0.0.tar.gz | cut -d'=' -f2 | cut -c2-41` # Задаем значения PRINT_SHA1 - чексуммы
 $ echo $PRINT_SHA1 # Выводим на экран
+Вывод: dd2c3fd32005e0201b000512218564451b90ae61
 $ rm -rf v0.1.0.0.tar.gz # Удаляем 
 ```
 Клонируем и делаем fork
@@ -52,7 +53,21 @@ $ cd projects/hunter && git checkout v0.19.137 # Переходим в hunter н
 $ git remote show # Показываем удаленные серверы
 $ hub fork # Делаем fork
 $ git remote show # Показываем удаленные серверы
+Вывод:
+YAKOVLENKO
+origin
 $ git remote show ${GITHUB_USERNAME} # Узнаем информацию о сервере ${GITHUB_USERNAME}
+Вывод:
+* внешний репозиторий YAKOVLENKO
+  URL для извлечения: https://github.com/YAKOVLENKO/hunter.git
+  URL для отправки: https://github.com/YAKOVLENKO/hunter.git
+  HEAD ветка: master
+  Внешние ветки:
+    master              отслеживается
+    pr.new.toolchain.id отслеживается
+    testing-packages    отслеживается
+  Локальная ссылка, настроенная для «git push»:
+    master будет отправлена в master (уже актуальна)
 ```
 Указываем нужные значения в hunter.cmake
 ```ShellSession
@@ -148,6 +163,7 @@ EOF
 $ wget https://github.com/${GITHUB_USERNAME}/hunter/archive/v0.19.137.1.tar.gz # Получаем архив
 $ export HUNTER_SHA1=`openssl sha1 v0.19.137.1.tar.gz | cut -d'=' -f2 | cut -c2-41` # Определяем HUNTER_SHA1
 $ echo $HUNTER_SHA1 # Вывод
+Вывод: 3ebd749c5c1d8319feb8e3fb1c86aa6a53f99239
 $ rm -rf v0.19.137.1.tar.gz # Удаляем
 ```
 Включаем HunterGate в CMakeLists.txt 
@@ -224,6 +240,10 @@ $ cmake --build _build --target install
 $ mkdir artifacts && cd artifacts 
 $ echo "text1 text2 text3" | ../_install/bin/demo 
 $ cat log.txt 
+Вывод:
+text1
+text2
+text3
 ```
 
 ## Report
