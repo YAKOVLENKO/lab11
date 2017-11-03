@@ -84,7 +84,7 @@ hunter_cmake_args( # Указываем аргументы hunter (без при
     BUILD_TESTS=NO
 )
 с(print)
-hunter_download(PACKAGE_NAME print) # Скачиваем пакет PACKAGE_NAME
+hunter_download(PACKAGE_NAME print) # Скачиваем пакет 
 EOF
 ```
 Выбираем версию для построения
@@ -107,7 +107,7 @@ $ cd .. #
 ```ShellSession
 $ export HUNTER_ROOT=`pwd`/hunter # Определение переменной для добавления новго пакета
 $ mkdir lab10 && cd lab10 # Создаем папку lab10 И переходим туда
-$ git init # Инициализируем
+$ git init #Инициализируем
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab10 # Сообщаем локальному репозиторию, где находится главный репозиторий
 ```
 Создание файла с кодом cpp
@@ -131,11 +131,11 @@ EOF
 $ wget https://github.com/hunter-packages/gate/archive/v0.8.1.tar.gz # Получение пакета
 $ tar -xzvf v0.8.1.tar.gz gate-0.8.1/cmake/HunterGate.cmake #
 $ mkdir cmake # создание папки mkdir
-$ mv gate-0.8.1/cmake/HunterGate.cmake cmake #
-$ rm -rf gate*/ #
-$ rm *.tar.gz #
+$ mv gate-0.8.1/cmake/HunterGate.cmake cmake # Перемещаем в cmake
+$ rm -rf gate*/ # Удаляем
+$ rm *.tar.gz # Удаляем
 ```
-
+Устанавливаем минимальную обязательную версю cmake для проекта, свойства по умолчанию
 ```ShellSession
 $ cat > CMakeLists.txt <<EOF #
 cmake_minimum_required(VERSION 3.0)
@@ -143,16 +143,16 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_STANDARD 11)
 EOF
 ```
-
+Выводим
 ```
-$ wget https://github.com/${GITHUB_USERNAME}/hunter/archive/v0.19.137.1.tar.gz #
-$ export HUNTER_SHA1=`openssl sha1 v0.19.137.1.tar.gz | cut -d'=' -f2 | cut -c2-41` #
-$ echo $HUNTER_SHA1 #
-$ rm -rf v0.19.137.1.tar.gz #
+$ wget https://github.com/${GITHUB_USERNAME}/hunter/archive/v0.19.137.1.tar.gz # Получаем архив
+$ export HUNTER_SHA1=`openssl sha1 v0.19.137.1.tar.gz | cut -d'=' -f2 | cut -c2-41` # Определяем HUNTER_SHA1
+$ echo $HUNTER_SHA1 # Вывод
+$ rm -rf v0.19.137.1.tar.gz # Удаляем
 ```
-
+Включаем HunterGate в CMakeLists.txt 
 ```ShellSession
-$ cat >> CMakeLists.txt <<EOF #
+$ cat >> CMakeLists.txt <<EOF 
 
 include(cmake/HunterGate.cmake)
 
@@ -162,22 +162,22 @@ HunterGate(
 )
 EOF
 ```
-
+Установка target-объектов
 ```ShellSession
 $ cat >> CMakeLists.txt <<EOF #
 
 project(demo)
 
-hunter_add_package(print)
-find_package(print)
+hunter_add_package(print) # Добвляем пакет
+find_package(print) # Находим пакет
 
-add_executable(demo \${CMAKE_CURRENT_SOURCE_DIR}/sources/demo.cpp)
-target_link_libraries(demo print)
+add_executable(demo \${CMAKE_CURRENT_SOURCE_DIR}/sources/demo.cpp) # Добавляем файл для построения
+target_link_libraries(demo print) # Привязываем библиотеки
 
-install(TARGETS demo RUNTIME DESTINATION bin)
+install(TARGETS demo RUNTIME DESTINATION bin) # Устанавливаем
 EOF
 ```
-
+Создаем .gitignore
 ```ShellSession
 $ cat > .gitignore <<EOF #
 *build*/
@@ -185,14 +185,14 @@ $ cat > .gitignore <<EOF #
 *.swp
 EOF
 ```
-
+Помещаем MARKDOWN
 ```ShellSession
 $ cat > README.md <<EOF #
 [![Build Status](https://travis-ci.org/${GITHUB_USERNAME}/lab10.svg?branch=master)](https://travis-ci.org/${GITHUB_USERNAME}/lab10)
 the demo application redirects data from stdin to a file **log.txt** using a package **print**.
 EOF
 ```
-Устанавливаем язык
+Создаем файл для связи с travis
 ```ShellSession
 $ cat > .travis.yml <<EOF #
 language: cpp
@@ -217,7 +217,7 @@ $ git push origin master # Выкладываем изменения на сай
 $ travis login --auto # Авторизуемся
 $ travis enable # Активируем ЛР10
 ```
-
+Построение, создание папки artifacts, вывод текста
 ```ShellSession
 $ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install #
 $ cmake --build _build --target install #
