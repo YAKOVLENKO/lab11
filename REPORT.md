@@ -36,7 +36,7 @@ github.com:
   oauth_token: ${GITHUB_TOKEN}
   protocol: https
 EOF
-$ git config --global hub.protocol https #
+$ git config --global hub.protocol https # Просмотр и установка значения hub.protocol 
 ```
 Получение версии архивом
 ```ShellSession
@@ -126,7 +126,7 @@ int main(int argc, char** argv) {
 }
 EOF
 ```
-
+Получение файлов
 ```ShellSession
 $ wget https://github.com/hunter-packages/gate/archive/v0.8.1.tar.gz # Получение пакета
 $ tar -xzvf v0.8.1.tar.gz gate-0.8.1/cmake/HunterGate.cmake #
@@ -198,13 +198,13 @@ $ cat > .travis.yml <<EOF #
 language: cpp
 
 script:   
-- cmake -H. -B_build
+- cmake -H. -B_buildф
 - cmake --build _build
 EOF
 ```
 
 ```ShellSession
-$ travis lint #
+$ travis lint # Проверка конфигурации
 ```
 Загружаем изменения на сервер
 ```ShellSession
@@ -219,11 +219,11 @@ $ travis enable # Активируем ЛР10
 ```
 Построение, создание папки artifacts, вывод текста
 ```ShellSession
-$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install #
-$ cmake --build _build --target install #
-$ mkdir artifacts && cd artifacts #
-$ echo "text1 text2 text3" | ../_install/bin/demo #
-$ cat log.txt #
+$ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install 
+$ cmake --build _build --target install 
+$ mkdir artifacts && cd artifacts 
+$ echo "text1 text2 text3" | ../_install/bin/demo 
+$ cat log.txt 
 ```
 
 ## Report
