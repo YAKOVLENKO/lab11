@@ -213,7 +213,7 @@ $ cat > .travis.yml <<EOF
 language: cpp
 
 script:   
-- cmake -H. -B_buildф
+- cmake -H. -B_build
 - cmake --build _build
 EOF
 ```
@@ -235,10 +235,246 @@ $ travis enable # Активируем ЛР10
 Построение, создание папки artifacts, вывод текста
 ```ShellSession
 $ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install 
+Вывод см. ниже
 $ cmake --build _build --target install 
 $ mkdir artifacts && cd artifacts 
 $ echo "text1 text2 text3" | ../_install/bin/demo 
 $ cat log.txt 
+
+Вывод: 
+-- [hunter] Initializing Hunter workspace (3ebd749c5c1d8319feb8e3fb1c86aa6a53f99239)
+-- [hunter]   https://github.com/YAKOVLENKO/hunter/archive/v0.19.137.1.tar.gz
+-- [hunter]   -> /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/Hunter/0.19.137/3ebd749
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- [hunter] Calculating Toolchain-SHA1
+-- [hunter] Calculating Config-SHA1
+-- [hunter] HUNTER_ROOT: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter
+-- [hunter] [ Hunter-ID: 3ebd749 | Toolchain-ID: e1266bb | Config-ID: 83da1ac ]
+-- [hunter] PRINT_ROOT: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Install (ver.: 0.1.0.0)
+-- [hunter] Building print
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/cache.cmake
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/args.cmake
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Build
+Scanning dependencies of target print-Release
+[  6%] Creating directories for 'print-Release'
+[ 12%] Performing download step (download, verify and extract) for 'print-Release'
+-- downloading...
+     src='https://github.com/YAKOVLENKO/lab09/archive/v0.1.0.0.tar.gz'
+     dst='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/print/0.1.0.0/dd2c3fd/v0.1.0.0.tar.gz'
+     timeout='none'
+-- [download 0% complete]
+-- [download 1% complete]
+-- [download 2% complete]
+-- [download 4% complete]
+-- [download 5% complete]
+-- [download 6% complete]
+-- [download 7% complete]
+-- [download 8% complete]
+-- [download 10% complete]
+-- [download 11% complete]
+-- [download 12% complete]
+-- [download 13% complete]
+-- [download 14% complete]
+-- [download 16% complete]
+-- [download 17% complete]
+-- [download 18% complete]
+-- [download 20% complete]
+-- [download 21% complete]
+-- [download 22% complete]
+-- [download 23% complete]
+-- [download 24% complete]
+-- [download 26% complete]
+-- [download 27% complete]
+-- [download 28% complete]
+-- [download 29% complete]
+-- [download 30% complete]
+-- [download 31% complete]
+-- [download 33% complete]
+-- [download 34% complete]
+-- [download 35% complete]
+-- [download 36% complete]
+-- [download 37% complete]
+-- [download 39% complete]
+-- [download 40% complete]
+-- [download 41% complete]
+-- [download 42% complete]
+-- [download 43% complete]
+-- [download 45% complete]
+-- [download 46% complete]
+-- [download 47% complete]
+-- [download 48% complete]
+-- [download 49% complete]
+-- [download 51% complete]
+-- [download 52% complete]
+-- [download 53% complete]
+-- [download 54% complete]
+-- [download 55% complete]
+-- [download 57% complete]
+-- [download 58% complete]
+-- [download 59% complete]
+-- [download 60% complete]
+-- [download 61% complete]
+-- [download 63% complete]
+-- [download 64% complete]
+-- [download 65% complete]
+-- [download 66% complete]
+-- [download 67% complete]
+-- [download 68% complete]
+-- [download 70% complete]
+-- [download 71% complete]
+-- [download 72% complete]
+-- [download 73% complete]
+-- [download 74% complete]
+-- [download 75% complete]
+-- [download 77% complete]
+-- [download 78% complete]
+-- [download 79% complete]
+-- [download 80% complete]
+-- [download 81% complete]
+-- [download 83% complete]
+-- [download 84% complete]
+-- [download 85% complete]
+-- [download 86% complete]
+-- [download 87% complete]
+-- [download 89% complete]
+-- [download 90% complete]
+-- [download 91% complete]
+-- [download 92% complete]
+-- [download 93% complete]
+-- [download 95% complete]
+-- [download 96% complete]
+-- [download 97% complete]
+-- [download 98% complete]
+-- [download 99% complete]
+-- [download 100% complete]
+-- downloading... done
+-- verifying file...
+     file='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/print/0.1.0.0/dd2c3fd/v0.1.0.0.tar.gz'
+-- verifying file... done
+-- extracting...
+     src='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/print/0.1.0.0/dd2c3fd/v0.1.0.0.tar.gz'
+     dst='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Source'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 18%] No patch step for 'print-Release'
+[ 25%] No update step for 'print-Release'
+[ 31%] Performing configure step for 'print-Release'
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/cache.cmake
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/args.cmake
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Build/print-Release-prefix/src/print-Release-build
+[ 37%] Performing build step for 'print-Release'
+Scanning dependencies of target print
+[ 50%] Building CXX object CMakeFiles/print.dir/sources/print.cpp.o
+[100%] Linking CXX static library libprint.a
+[100%] Built target print
+[ 43%] Performing install step for 'print-Release'
+[100%] Built target print
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/lib/libprint.a
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/include
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/include/print.hpp
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/cmake/print-config.cmake
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/cmake/print-config-release.cmake
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/args.cmake
+[ 50%] Completed 'print-Release'
+[ 50%] Built target print-Release
+Scanning dependencies of target print-Debug
+[ 56%] Creating directories for 'print-Debug'
+[ 62%] Performing download step (download, verify and extract) for 'print-Debug'
+-- verifying file...
+     file='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/print/0.1.0.0/dd2c3fd/v0.1.0.0.tar.gz'
+-- verifying file... done
+-- extracting...
+     src='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Download/print/0.1.0.0/dd2c3fd/v0.1.0.0.tar.gz'
+     dst='/home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Source'
+-- extracting... [tar xfz]
+-- extracting... [analysis]
+-- extracting... [rename]
+-- extracting... [clean up]
+-- extracting... done
+[ 68%] No patch step for 'print-Debug'
+[ 75%] No update step for 'print-Debug'
+[ 81%] Performing configure step for 'print-Debug'
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/cache.cmake
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/args.cmake
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Build/print-Debug-prefix/src/print-Debug-build
+[ 87%] Performing build step for 'print-Debug'
+Scanning dependencies of target print
+[ 50%] Building CXX object CMakeFiles/print.dir/sources/print.cpp.o
+[100%] Linking CXX static library libprintd.a
+[100%] Built target print
+[ 93%] Performing install step for 'print-Debug'
+[100%] Built target print
+Install the project...
+-- Install configuration: "Debug"
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/lib/libprintd.a
+-- Up-to-date: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/include
+-- Up-to-date: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/include/print.hpp
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/cmake/print-config.cmake
+-- Installing: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/Install/cmake/print-config-debug.cmake
+loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print/args.cmake
+[100%] Completed 'print-Debug'
+[100%] Built target print-Debug
+-- [hunter] Build step successful (dir: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/3ebd749/e1266bb/83da1ac/Build/print)
+-- [hunter] Cache saved: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Cache/raw/7b95b97eb4f86e4d7c8c7c230375bb3987687a08.tar.bz2
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/lab10/_build
+
+
 ```
 
 ## Report
