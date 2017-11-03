@@ -43,7 +43,6 @@ $ git config --global hub.protocol https # Просмотр и установк�
 $ wget https://github.com/${GITHUB_USERNAME}/lab09/archive/v0.1.0.0.tar.gz # получаем архив
 $ export PRINT_SHA1=`openssl sha1 v0.1.0.0.tar.gz | cut -d'=' -f2 | cut -c2-41` # Задаем значения PRINT_SHA1 - чексуммы
 $ echo $PRINT_SHA1 # Выводим на экран
-Вывод: dd2c3fd32005e0201b000512218564451b90ae61
 $ rm -rf v0.1.0.0.tar.gz # Удаляем 
 ```
 Клонируем и делаем fork
@@ -240,10 +239,6 @@ $ cmake --build _build --target install
 $ mkdir artifacts && cd artifacts 
 $ echo "text1 text2 text3" | ../_install/bin/demo 
 $ cat log.txt 
-Вывод:
-text1
-text2
-text3
 ```
 
 ## Report
