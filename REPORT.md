@@ -23,7 +23,7 @@ $ export GITHUB_TOKEN=<сгенирированный_токен> # Задаем
 Скачиваем и устанавливаем дополнение hub
 ```ShellSession
 $ cd ${GITHUB_USERNAME}/workspace # Переходим в папку workspace
-$ pushd . # 
+$ pushd . 
 $ source scripts/activate # Указываем источник
 $ go get github.com/github/hub # Скачиваем и устанавливаем
 ```
@@ -129,7 +129,7 @@ EOF
 Получение файлов
 ```ShellSession
 $ wget https://github.com/hunter-packages/gate/archive/v0.8.1.tar.gz # Получение пакета
-$ tar -xzvf v0.8.1.tar.gz gate-0.8.1/cmake/HunterGate.cmake #
+$ tar -xzvf v0.8.1.tar.gz gate-0.8.1/cmake/HunterGate.cmake 
 $ mkdir cmake # создание папки mkdir
 $ mv gate-0.8.1/cmake/HunterGate.cmake cmake # Перемещаем в cmake
 $ rm -rf gate*/ # Удаляем
@@ -137,7 +137,7 @@ $ rm *.tar.gz # Удаляем
 ```
 Устанавливаем минимальную обязательную версю cmake для проекта, свойства по умолчанию
 ```ShellSession
-$ cat > CMakeLists.txt <<EOF #
+$ cat > CMakeLists.txt <<EOF
 cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -164,7 +164,7 @@ EOF
 ```
 Установка target-объектов
 ```ShellSession
-$ cat >> CMakeLists.txt <<EOF #
+$ cat >> CMakeLists.txt <<EOF 
 
 project(demo)
 
@@ -179,22 +179,22 @@ EOF
 ```
 Создаем .gitignore
 ```ShellSession
-$ cat > .gitignore <<EOF #
+$ cat > .gitignore <<EOF 
 *build*/
 *install*/
 *.swp
 EOF
 ```
-Помещаем MARKDOWN
+Помещаем значок MARKDOWN
 ```ShellSession
-$ cat > README.md <<EOF #
+$ cat > README.md <<EOF 
 [![Build Status](https://travis-ci.org/${GITHUB_USERNAME}/lab10.svg?branch=master)](https://travis-ci.org/${GITHUB_USERNAME}/lab10)
 the demo application redirects data from stdin to a file **log.txt** using a package **print**.
 EOF
 ```
 Создаем файл для связи с travis
 ```ShellSession
-$ cat > .travis.yml <<EOF #
+$ cat > .travis.yml <<EOF 
 language: cpp
 
 script:   
