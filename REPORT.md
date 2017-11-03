@@ -202,9 +202,9 @@ script:
 - cmake --build _build
 EOF
 ```
-
+Проверка конфигурации
 ```ShellSession
-$ travis lint # Проверка конфигурации
+$ travis lint 
 ```
 Загружаем изменения на сервер
 ```ShellSession
