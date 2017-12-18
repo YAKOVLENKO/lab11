@@ -8,7 +8,7 @@ $ open https://github.com/ruslo/hunter
 
 ## Tasks
 
-- [X] 1. Создать публичный репозиторий с названием **lab10** на сервисе **GitHub**
+- [X] 1. Создать публичный репозиторий с названием **lab11** на сервисе **GitHub**
 - [X] 2. Сгенирировать токен для доступа к сервису **GitHub** с правами **repo**
 - [X] 3. Выполнить инструкцию учебного материала
 - [X] 4. Ознакомиться со ссылками учебного материала
@@ -120,9 +120,9 @@ $ cd .. #
 Соединение с сервером
 ```ShellSession
 $ export HUNTER_ROOT=`pwd`/hunter # Определение переменной для добавления новго пакета
-$ mkdir lab10 && cd lab10 # Создаем папку lab10 И переходим туда
+$ mkdir lab11 && cd lab11 # Создаем папку lab11 И переходим туда
 $ git init #Инициализируем
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab10 # Сообщаем локальному репозиторию, где находится главный репозиторий
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab11 # Сообщаем локальному репозиторию, где находится главный репозиторий
 ```
 Создание файла с кодом cpp
 ```ShellSession
@@ -203,7 +203,7 @@ EOF
 Помещаем значок MARKDOWN
 ```ShellSession
 $ cat > README.md <<EOF 
-[![Build Status](https://travis-ci.org/${GITHUB_USERNAME}/lab10.svg?branch=master)](https://travis-ci.org/${GITHUB_USERNAME}/lab10)
+[![Build Status](https://travis-ci.org/${GITHUB_USERNAME}/lab11.svg?branch=master)](https://travis-ci.org/${GITHUB_USERNAME}/lab11)
 the demo application redirects data from stdin to a file **log.txt** using a package **print**.
 EOF
 ```
@@ -472,7 +472,7 @@ loading initial cache file /home/user1/YAKOVLENKO/workspace/projects/hunter/proj
 -- [hunter] Cache saved: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/hunter/hunter/_Base/Cache/raw/7b95b97eb4f86e4d7c8c7c230375bb3987687a08.tar.bz2
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/lab10/_build
+-- Build files have been written to: /home/user1/YAKOVLENKO/workspace/projects/hunter/projects/lab11/_build
 
 
 ```
